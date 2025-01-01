@@ -1,0 +1,33 @@
+
+Assingments:
+Submit GitHub par ho ghy
+do on vs code
+Project last date 3/1/2025 High priority 123456789
+
+
+Strategy:
+first we solve remaining assingments so, it will help me out in concepts so then we will start working on Project
+all Assingment must solve in today
+then 2 and 3 for project
+
+
+
+
+Projects:
+
+	Steps:
+		- Assignment4
+			1  Conditional structure
+			2  List Assingment
+			3  Loops Assingment
+			4  Strings Assingment
+
+
+		- Assingment5
+			1- function Assingment 1
+			2- function Assingment 2
+
+		
+
+		-Opp Assingment(after project) Least Priority 1234
+			
