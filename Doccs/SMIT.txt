@@ -31,3 +31,31 @@ Projects:
 
 		-Opp Assingment(after project) Least Priority 1234
 			
+
+1- push changes to github git branch -M main
+git push -u origin main
+
+2- Pull Changes from GitHub
+git pull origin main
+
+
+3- Future Workflow
+git add . => Add Changes:
+git commit -m "Your commit message"  => Commit Changes:
+git push origin main  => Push Changes:
+git pull origin main  => Pull Changes
+
+
+4- SSH Authentication
+ssh-keygen -t rsa -b 4096 -C "your-email@example.com" (Generate an SSH key if you don’t want to enter your GitHub credentials every time)
+Copy the public key: (cat ~/.ssh/id_rsa.pub)
+Add the key to GitHub ( Go to Settings > SSH and GPG keys > New SSH Key.) 
+Paste the key and save.
+Update your GitHub remote to use SSH (git remote set-url origin git@github.com:username/repo-name.git)
+
+
+5- history and pending
+git status
+git diff
+git diff --cached
+git log
