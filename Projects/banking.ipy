@@ -1,0 +1,90 @@
+#add unique user id into the user data
+User_Accounts = {}
+
+# anaylysis (storing account data, create account, update, delete , storing user amount)
+# taking input from the user for account cration
+print("HI john Deo please open my Account Please")
+
+# <================= -Module 1:  F1 creating an account, ================>
+def accountCreation():
+    a1 = input("Enter user name")
+    a2 = input("Enter user Father name")
+    a3 = input("Enter user phone number")
+    a4 = input("Enter user email")
+    a5 = input("Enter user Job desingnation")
+    a6 = input("Enter user Address city, area, street")
+    return {
+        "name": a1,
+        "father_name": a2,
+        "phone_number": a3,
+        "email": a4,
+        "job_designation": a5,
+        "address": a6,
+    }
+
+#bank
+BankOfPakistan = {
+    "Balance" : 0,
+    "Transactions" : [0]
+}
+
+#use while loop for multiple entries
+while True:
+
+    AccountDetails = accountCreation()
+    AccountDetails["Balance_Ledger"] = BankOfPakistan
+    #ganerate unique user id
+    userId = len(User_Accounts) + 1
+    User_Accounts[f"User_{userId}"] = AccountDetails
+    # User_Accounts[f"Bank{userId}"] = BankOfPakistan()ali
+    
+    # ask if user want to add another acount or not
+    another = input("do you want to add another account yes/no: ").strip().lower()
+    if another != "yes":
+        break
+    
+print(User_Accounts)
+
+
+# <================= -Module 2:  F2 depositing money,bank =================>
+while True:
+    def depositeAmount():
+        userAccount = input("Enter userName")
+
+        #Check this user Exist or Not in the database in UserAccounts 
+
+        for value in  User_Accounts.values():
+            if value == userAccount:
+                print(True)
+
+        Amount = int(input("Enter your Amount "))
+
+
+
+
+
+
+
+
+# <================= -MOdule 3: -F3 withdrawing money, ===================>
+
+
+
+
+# <================= -MOdule 4: F4 checking the balance, ====================> 
+
+
+
+
+# <=============== -MOdule 5: F5 printing a transaction statement, ===============>
+
+
+
+
+
+
+
+
+# user_Account carry all users
+# Accountdetails carry only one user
+# goal : add bank into individual user by means AccountDetails 

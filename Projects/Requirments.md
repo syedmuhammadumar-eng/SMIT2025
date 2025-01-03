@@ -31,6 +31,25 @@ Data structure:
  -->
 
 
+ <!-- 
+ multiple accounts
+ multiple users
+ 
+ steps like 
+ first ask do you have account or verify through account number yes or No
+ if dont have account or invalid account number so give option to create account
+ after succsuflly creating account show you are now onboard
+
+ then provide select options like next, and exit
+ all runs into a loop
+
+ one loop > one function for handling account 
+
+ data structure dicct
+ account > user > user info with balance and transaction
+  -->
+
+
 # Step 2: Deposit Money 
 
 <!-- The deposit function will add money to the user’s account balance. Each deposit will be
