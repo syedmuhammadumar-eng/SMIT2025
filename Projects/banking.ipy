@@ -25,7 +25,7 @@ def accountCreation():
 #bank
 BankOfPakistan = {
     "Balance" : 0,
-    "Transactions" : [0]
+    "Transactions" : []
 }
 
 #use while loop for multiple entries
@@ -33,10 +33,14 @@ while True:
 
     AccountDetails = accountCreation()
     AccountDetails["Balance_Ledger"] = BankOfPakistan
+
+    AccountDetails["UserID"] = 
+
     #ganerate unique user id
     userId = len(User_Accounts) + 1
     User_Accounts[f"User_{userId}"] = AccountDetails
-    # User_Accounts[f"Bank{userId}"] = BankOfPakistan()ali
+
+    
     
     # ask if user want to add another acount or not
     another = input("do you want to add another account yes/no: ").strip().lower()
@@ -47,21 +51,22 @@ print(User_Accounts)
 
 
 # <================= -Module 2:  F2 depositing money,bank =================>
-while True:
-    def depositeAmount():
-        userAccount = input("Enter userName")
 
-        #Check this user Exist or Not in the database in UserAccounts 
+def depositeAmount():
+    while True:
+        userAccount = input("Enter userName") #user put here your name
 
-        for value in  User_Accounts.values():
-            if value == userAccount:
-                print(True)
-
-        Amount = int(input("Enter your Amount "))
+        #Check this user name Exist or Not in the database in UserAccounts 
+        for key in  User_Accounts.keys["name"]():
+            if key == userAccount:
+                print("Your account is there")
 
 
+        # Amount = int(input("Enter your Amount"))
 
 
+
+depositeAmount()
 
 
 
