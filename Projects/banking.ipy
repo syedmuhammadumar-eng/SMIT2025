@@ -1,5 +1,4 @@
-#add unique user id into the user data
-User_Accounts = {}
+
 
 # anaylysis (storing account data, create account, update, delete , storing user amount)
 # taking input from the user for account cration
@@ -22,6 +21,11 @@ def accountCreation():
         "address": a6,
     }
 
+
+#add unique user id into the user data 
+#TO store all users into the array
+User_Accounts = []
+
 #bank
 BankOfPakistan = {
     "Balance" : 0,
@@ -34,13 +38,12 @@ while True:
     AccountDetails = accountCreation()
     AccountDetails["Balance_Ledger"] = BankOfPakistan
 
-    AccountDetails["UserID"] = 
-
     #ganerate unique user id
     userId = len(User_Accounts) + 1
-    User_Accounts[f"User_{userId}"] = AccountDetails
 
-    
+    AccountDetails["UserID"] = f"User_{userId}"
+
+    User_Accounts.append(AccountDetails)
     
     # ask if user want to add another acount or not
     another = input("do you want to add another account yes/no: ").strip().lower()
@@ -52,26 +55,77 @@ print(User_Accounts)
 
 # <================= -Module 2:  F2 depositing money,bank =================>
 
+#This function is used to deposit money in the that user account
+def deposit(dict,amount):
+    dict["Balance_Ledger"]["Balance"] += amount
+    dict["Balance_Ledger"]["Transactions"].append(amount)
+    
+
+#This function is used to withdraw amount
+def widraw(dict,amounts):
+    dict["Balance_Ledger"]["Balance"] -= amounts
+    dict["Balance_Ledger"]["Transactions"].append(amounts)
+
+
+
+
+#This function is used to confirm the user first and deposit that users amount into that user account
 def depositeAmount():
     while True:
-        userAccount = input("Enter userName") #user put here your name
-
-        #Check this user name Exist or Not in the database in UserAccounts 
-        for key in  User_Accounts.keys["name"]():
-            if key == userAccount:
-                print("Your account is there")
+        print("First verify you have current account or not: provide user name")
+        userAccount = input("Enter UserName") #user put here your name
 
 
-        # Amount = int(input("Enter your Amount"))
+        #new loop here for checking this user is existing or not
+        for c in User_Accounts:
+            if "name" in c and c["name"] == userAccount:  #here we check does name key is in dict or if yes so that key match with user provided username
+                print(f"Ok i got your Account is: {userAccount} ")
+                
+                print("do you want to widraw/depost if deposit so type : 1, if widraw so type : 2" )
+                con = int(input("Enter 1/2"))
+                if con == 1:
+                    print("Now please tell me How Amount to Deposit")
+                    cashAmount = int(input("Enter your amount"))
+                    deposit(dict = c, amount = cashAmount)
+                    break
+                elif con ==2:
+                    print("Now please tell me How Amount to widraw")
+                    cashAmounts = int(input("Enter your amount"))
+                    widraw(dict = c, amounts = cashAmounts)
+                    break
+                else:
+                    print("You Select Invalid Option")
 
+            else:
+                print("User Not Found")
+            # for key in c.keys():
+            #     if "name" in key:
+            #     # if key == "name":
+            #         #here we get that name key values in namee
+            #         namee = key["name"]
+            #         if userAccount == namee:
+            #             deposit()
+            #         else:
+            #             print("User not found.")
+        print("do you want to add another amount")       
+        smd = input("yes/No").upper()
+        if smd == "yes".upper():
+            continue
+        elif smd == "No".upper():
+            break
+        else:
+            print("Invalid 404, Try Again") 
 
+        print(f"your total balance is: {dict["Balance_Ledger"]["Balance"]}")
+        print(f"your Recent Transactions is: {dict["Balance_Ledger"]["Transactions"]} ")       
+  
 
 depositeAmount()
 
 
 
 
-# <================= -MOdule 3: -F3 withdrawing money, ===================>
+# <================= -Module 3: -F3 withdrawing money, ===================>
 
 
 
