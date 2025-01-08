@@ -59,12 +59,15 @@ print(User_Accounts)
 def deposit(dict,amount):
     dict["Balance_Ledger"]["Balance"] += amount
     dict["Balance_Ledger"]["Transactions"].append(amount)
-    
+    # savebalance = dict["Balance_Ledger"]["Balance"]
+    # return savebalance
 
 #This function is used to withdraw amount
 def widraw(dict,amounts):
     dict["Balance_Ledger"]["Balance"] -= amounts
     dict["Balance_Ledger"]["Transactions"].append(amounts)
+    # saveTransactions = dict["Balance_Ledger"]["Transactions"]
+    # return saveTransactions
 
 
 
@@ -75,20 +78,19 @@ def depositeAmount():
         print("First verify you have current account or not: provide user name")
         userAccount = input("Enter UserName") #user put here your name
 
-
         #new loop here for checking this user is existing or not
         for c in User_Accounts:
             if "name" in c and c["name"] == userAccount:  #here we check does name key is in dict or if yes so that key match with user provided username
-                print(f"Ok i got your Account is: {userAccount} ")
+                print(f"Ok i got your Account is: {userAccount} SUCCESS..>")
                 
                 print("do you want to widraw/depost if deposit so type : 1, if widraw so type : 2" )
                 con = int(input("Enter 1/2"))
                 if con == 1:
-                    print("Now please tell me How Amount to Deposit")
+                    print("Now please tell me How Much Amount to Deposit In your Account")
                     cashAmount = int(input("Enter your amount"))
                     deposit(dict = c, amount = cashAmount)
                     break
-                elif con ==2:
+                elif con == 2:
                     print("Now please tell me How Amount to widraw")
                     cashAmounts = int(input("Enter your amount"))
                     widraw(dict = c, amounts = cashAmounts)
@@ -98,6 +100,56 @@ def depositeAmount():
 
             else:
                 print("User Not Found")
+
+            def printBalance():
+                ptb = c["Balance_Ledger"]["Balance"] 
+                return ptb   
+
+            def printTransaction():
+                ptt = c["Balance_Ledger"]["Transactions"]
+                return ptt
+            
+            print(" 1 for balance /n 2 for Transactions history /n 3 for Exit")
+            ezk = int(input("Enter 1 or 2 or 3 :  "))
+            if ezk == 1:
+                printBalance()
+            elif ezk == 2:
+                printTransaction()
+            elif ezk == 3:
+                break
+
+        
+            
+        print("do you want to add another amount")       
+        smd = input("yes/No").upper()
+        if smd == "yes".upper():
+            continue
+        elif smd == "No".upper():
+            break
+        else:
+            print("Invalid 404, Try Again")    
+
+
+      
+    
+
+
+depositeAmount()
+
+
+# Trash is right below------------------->
+
+# while True:
+    # print(" 1 for balance /n 2 for Transactions history /n 3 for Exit")
+    # ezk = int(input("Enter 1 or 2 or 3 :  "))
+    # if ezk == 1:
+    #     printBalance()
+    # elif ezk == 2:
+    #     printTransaction()
+    # elif ezk == 3:
+    #     break
+
+
             # for key in c.keys():
             #     if "name" in key:
             #     # if key == "name":
@@ -107,24 +159,11 @@ def depositeAmount():
             #             deposit()
             #         else:
             #             print("User not found.")
-        print("do you want to add another amount")       
-        smd = input("yes/No").upper()
-        if smd == "yes".upper():
-            continue
-        elif smd == "No".upper():
-            break
-        else:
-            print("Invalid 404, Try Again") 
-
-        print(f"your total balance is: {dict["Balance_Ledger"]["Balance"]}")
-        print(f"your Recent Transactions is: {dict["Balance_Ledger"]["Transactions"]} ")       
-  
-
-depositeAmount()
 
 
 
 
-# user_Account carry all users
-# Accountdetails carry only one user
-# goal : add bank into individual user by means AccountDetails 
+
+
+
+
