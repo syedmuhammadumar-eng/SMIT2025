@@ -125,25 +125,6 @@ depositeAmount()
 
 
 
-# <================= -Module 3: -F3 withdrawing money, ===================>
-
-
-
-
-# <================= -MOdule 4: F4 checking the balance, ====================> 
-
-
-
-
-# <=============== -MOdule 5: F5 printing a transaction statement, ===============>
-
-
-
-
-
-
-
-
 # user_Account carry all users
 # Accountdetails carry only one user
 # goal : add bank into individual user by means AccountDetails 
